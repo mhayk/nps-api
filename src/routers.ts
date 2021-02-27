@@ -8,6 +8,8 @@ const userController = new UserController();
 const surveysControler = new SurveysController();
 
 router.post("/users", userController.create);
+
 router.post("/surveys", surveysControler.create);
+router.get("/surveys", surveysControler.show);
 
 export { router };
