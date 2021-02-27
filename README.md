@@ -8,5 +8,24 @@ Net Promoter or Net Promoter Score (NPS) is the percentage of customers rating t
 Creating user migration
 ```
 $ yarn typeorm migration:create -n CreateUsers
+$ yarn typeorm migration:create -n CreateSurveys
 $ yarn typeorm migration:run
+```
+# Tests(TDD)
+
+1. Unit tests
+
+2. Integration tests
+```
+-> request -> routes -> controller -> repository
+<- repository <- controller <- response
+```
+
+3. E2E (End to End - front-end)
+
+# Jest
+
+## Create jest config file
+```
+$ yarn jest --init
 ```
