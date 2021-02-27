@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
 import "./database"
+import { router } from './routers';
 
 const app = express();
 
@@ -13,13 +14,8 @@ const app = express();
  * PATH => specific edition
  */
 
-app.get("/users", (request, response) => {
-    return response.json({ message: "Hello World" })
-})
-
-app.post("/users", (request, response) => {
-    return response.json({ message: "Data has been saved successfully." })
-})
+app.use(express.json());
+app.use(router);
 
 app.listen(3334, () => {
     console.log("Server is running!")
