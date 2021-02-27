@@ -1,21 +1,4 @@
-import 'reflect-metadata';
-import express from 'express';
-import "./database"
-import { router } from './routers';
-
-const app = express();
-
-
-/**
- * GET => Liest/Search
- * POST => Save/Create
- * Put => Update
- * DELETE => Delete
- * PATH => specific edition
- */
-
-app.use(express.json());
-app.use(router);
+import { app } from "./app"
 
 app.listen(3334, () => {
     console.log("Server is running!")
