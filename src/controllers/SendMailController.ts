@@ -39,13 +39,14 @@ class SendMailController {
             name: userAlreadyExists.name,
             title: surveyAlreadyExists.title,
             description: surveyAlreadyExists.description,
-            user_id: userAlreadyExists.id,
+            id: "",
             link: process.env.URL_MAIL
         }
 
         const npsPath = resolve(__dirname, "..", "views", "emails", "npsMail.hbs");
 
         if (surveyUserAlreadyExists) {
+            variables.id = surveyUserAlreadyExists.id;
             await SendMailService.execute(email, surveyAlreadyExists.title, variables, npsPath);
             return response.json(surveyUserAlreadyExists);
         }
@@ -55,6 +56,8 @@ class SendMailController {
             survey_id
         })
         await surveysUsersRepository.save(surveyUser);
+
+        variables.id = surveyUser.id
 
         // Send email
         await SendMailService.execute(
