@@ -9,6 +9,7 @@ Creating user migration
 ```
 $ yarn typeorm migration:create -n CreateUsers
 $ yarn typeorm migration:create -n CreateSurveys
+$ yarn typeorm migration:create -n CreateSurveysUsers
 $ yarn typeorm migration:run
 ```
 # Tests(TDD)
