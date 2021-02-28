@@ -8,10 +8,8 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test": "NODE_ENV=test jest",
-    "posttest": "rm ./src/database/database.test.sqlite",
-    "test_windows": "set NODE_ENV=test&&jest",
-    "posttest_windows": "rm ./src/database/database.test.sqlite"
+    "test": "NODE_ENV=test jest -i",
+    "test_windows": "set NODE_ENV=test&&jest -i"
   },
   "dependencies": {
     "express": "^4.17.1",
